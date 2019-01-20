@@ -52,24 +52,6 @@ img{
   padding: 10px;
 }
 
-.cta-container button {
-    font-size: 18px;
-    border: 1px solid #222;
-    padding: 15px 20px;
-    display: inline-block;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 0 15px 20px 15px;
-    transition: all 0.3s ease-out;
-    cursor: pointer;
-    outline: 0;
-    background: #fff;
-}
-
-.cta-container button:hover{
-    color: #fff;
-    background-color: #222;
-}
 /* modal css */
 .modal-overlay{
   position: fixed;
@@ -91,12 +73,6 @@ img{
   background: #fff;
 }
 
-.modal-content button{
-  padding: 10px 15px;
-  border-radius: 5px;
-  font-size: 14px;
-  cursor: pointer;
-}
 /* flip animation css */
 
 .flip-container {
