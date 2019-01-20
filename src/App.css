@@ -1,0 +1,159 @@
+/* generic css */
+*{
+  box-sizing: border-box;
+}
+ul{
+  padding: 0;
+  margin: 0;
+}
+li{
+  list-style: none;
+  margin: 0;
+}
+img{
+  max-width: 100%;
+}
+/* board specific css */
+.App {
+  text-align: center;
+  font-family: Arial;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.App h1{
+  font-size: 30px;
+}
+.App p{
+  font-size: 16px;
+  line-height: 1.5;
+}
+.App .score{
+  font-size: 18px;
+  border: 1px solid #000;
+  padding: 15px 20px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+.board{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.board li{
+  flex : 1 1 100px;
+  height: 100px;
+  border: 1px solid #444;
+  cursor: pointer;
+  perspective: 1000px;
+  padding: 10px;
+}
+
+.cta-container button {
+    font-size: 18px;
+    border: 1px solid #222;
+    padding: 15px 20px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 15px 20px 15px;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    outline: 0;
+    background: #fff;
+}
+
+.cta-container button:hover{
+    color: #fff;
+    background-color: #222;
+}
+/* modal css */
+.modal-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0, 0.4);
+  z-index: 1000;
+}
+
+.modal-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 400px;
+  padding: 20px;
+  background: #fff;
+}
+
+.modal-content button{
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+/* flip animation css */
+
+.flip-container {
+  perspective: 1000px;
+}
+.flip-container.open .flipper {
+  transform: rotateY(180deg);
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+}
+
+.left.back{
+ transform: rotateZ(180deg) rotateY(180deg); 
+}
+.top.back{
+ transform: rotateZ(90deg) rotateY(180deg); 
+}
+.bottom.back{
+ transform: rotateZ(270deg) rotateY(180deg); 
+}
+
+/* mobile viewport css */
+
+@media only screen and (max-width: 800px) {
+    .App {
+      max-width: 100%;
+      padding: 20px;
+    }
+    .board li{
+      flex: 1 1 12.5%;
+      height: 0;
+      padding: 0.5% 5px 12%;
+    }
+    
+}
